@@ -1,11 +1,8 @@
 grammar EMail;
 
-start: LocalPart'@'Domain;
-LocalPart: LocalPartRule+;
-Domain: LETTER(LETTER|DIGIT|'-')*'.'ListOfDomain;
+start: EMAIL EOF;
 
-LocalPartRule: LETTER|DIGIT|PrintableCharacters|'.';
-LETTER: [A-Za-z];
-PrintableCharacters: '!'|'#'|'$'|'%'|'&'|'\''|'*'|'+'|'-'|'/'|'='|'?'|'^'|'_'|'`'|'{'|'}'|'~';
-DIGIT: [0-9];
-ListOfDomain: 'com'|'org'|'net'|'ir'|'info'|'gov';
+EMAIL: LOCAL_SUBPART ('.' LOCAL_SUBPART)* '@' DOMAIN_SUBPART ('.' DOMAIN_SUBPART)+;
+
+fragment LOCAL_SUBPART : [a-zA-Z0-9!$&()*+,;=:_~-]+;
+fragment DOMAIN_SUBPART : [a-zA-Z0-9-]+;

@@ -1,17 +1,20 @@
-# Generated from EMail.g4 by ANTLR 4.7.2
+# Generated from /home/bijan/PycharmProjects/compiler-design/HW2/gen/EMail.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
-from typing import TextIO
 import sys
+
+if sys.version_info[1] > 5:
+    from typing import TextIO
+else:
+    from typing.io import TextIO
 
 
 def serializedATN():
-    with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\n")
-        buf.write("\t\4\2\t\2\3\2\3\2\3\2\3\2\3\2\2\2\3\2\2\2\2\7\2\4\3\2")
-        buf.write("\2\2\4\5\7\4\2\2\5\6\7\3\2\2\6\7\7\5\2\2\7\3\3\2\2\2\2")
-        return buf.getvalue()
+    return [
+        4, 1, 1, 6, 2, 0, 7, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 2, 1, 0, 0, 0, 2, 3, 5,
+        1, 0, 0, 3, 4, 5, 0, 0, 1, 4, 1, 1, 0, 0, 0, 0
+    ]
 
 
 class EMailParser(Parser):
@@ -23,42 +26,35 @@ class EMailParser(Parser):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = ["<INVALID>", "'@'"]
+    literalNames = []
 
-    symbolicNames = ["<INVALID>", "<INVALID>", "LocalPart", "Domain", "LocalPartRule",
-                     "LETTER", "PrintableCharacters", "DIGIT", "ListOfDomain"]
+    symbolicNames = ["<INVALID>", "EMAIL"]
 
     RULE_start = 0
 
     ruleNames = ["start"]
 
     EOF = Token.EOF
-    T__0 = 1
-    LocalPart = 2
-    Domain = 3
-    LocalPartRule = 4
-    LETTER = 5
-    PrintableCharacters = 6
-    DIGIT = 7
-    ListOfDomain = 8
+    EMAIL = 1
 
     def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7.2")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
     class StartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def LocalPart(self):
-            return self.getToken(EMailParser.LocalPart, 0)
+        def EMAIL(self):
+            return self.getToken(EMailParser.EMAIL, 0)
 
-        def Domain(self):
-            return self.getToken(EMailParser.Domain, 0)
+        def EOF(self):
+            return self.getToken(EMailParser.EOF, 0)
 
         def getRuleIndex(self):
             return EMailParser.RULE_start
@@ -71,6 +67,12 @@ class EMailParser(Parser):
             if hasattr(listener, "exitStart"):
                 listener.exitStart(self)
 
+        def accept(self, visitor: ParseTreeVisitor):
+            if hasattr(visitor, "visitStart"):
+                return visitor.visitStart(self)
+            else:
+                return visitor.visitChildren(self)
+
     def start(self):
 
         localctx = EMailParser.StartContext(self, self._ctx, self.state)
@@ -78,11 +80,9 @@ class EMailParser(Parser):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2
-            self.match(EMailParser.LocalPart)
+            self.match(EMailParser.EMAIL)
             self.state = 3
-            self.match(EMailParser.T__0)
-            self.state = 4
-            self.match(EMailParser.Domain)
+            self.match(EMailParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -90,3 +90,8 @@ class EMailParser(Parser):
         finally:
             self.exitRule()
         return localctx
+
+
+
+
+

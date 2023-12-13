@@ -1,9 +1,1 @@
-T__0=1
-LocalPart=2
-Domain=3
-LocalPartRule=4
-LETTER=5
-PrintableCharacters=6
-DIGIT=7
-ListOfDomain=8
-'@'=1
+EMAIL=1
