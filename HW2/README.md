@@ -26,3 +26,16 @@ This will generate the lexer (`EMailLexer.py`) and parser (`EMailParser.py`) fil
 
 Now that you have the lexer and parser files, you can use them in your Python code to parse email addresses. Here's a simple example:
 [main.py](main.py)
+
+input :
+```
+john.doe@example.com
+invalid.email@missingtoplevel
+user@inva!lid.com
+```
+output :
+```
+Valid email address: john.doe@example.com
+Invalid email address: invalid.email@missingtoplevel
+Invalid email address: user@inva!lid.com
+```
