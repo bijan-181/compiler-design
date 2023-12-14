@@ -19,6 +19,7 @@ rules for matching and extracting different types of information, including:
 - **Postal Code**: Matches 10-digit postal codes.
 - **Phone numbers**: Identifies 11-digit phone numbers.
 - **Floats**: Matches decimal numbers.
+- **Version**: Matches version numbers in the format of `x.y.z`.
 - **Words**: Catches alphanumeric characters, hyphens, and selected symbols.
 - **WS**: Skips whitespace characters.
 
