@@ -9,7 +9,8 @@ Python script [(`main.py`)](main.py) that utilizes the generated lexer and parse
 
 ### ExtractInfo.g4
 
-The [`ExtractInfo.g4`](gen/ExtractInfo.g4) file contains the ANTLR4 grammar for recognizing various patterns in text. The grammar defines
+The [`ExtractInfo.g4`](gen/ExtractInfo.g4) file contains the ANTLR4 grammar for recognizing various patterns in text.
+The grammar defines
 rules for matching and extracting different types of information, including:
 
 - **URLs**: Recognizes both HTTP and HTTPS URLs, including optional "www" subdomains and various path components.
@@ -27,7 +28,8 @@ Feel free to modify the grammar to suit your specific use case or extend it to r
 
 ### main.py
 
-The [`main.py`](main.py) script serves as an example of how to use the generated lexer and parser from the ANTLR grammar. It
+The [`main.py`](main.py) script serves as an example of how to use the generated lexer and parser from the ANTLR grammar
+. It
 tokenizes the input text and categorizes the extracted tokens into different types, such as URLs, email addresses,
 national codes, phone numbers, floats, and unmatched text.
 
