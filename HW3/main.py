@@ -23,6 +23,7 @@ def main(input_string):
         "Postal Code": [],
         "Phone": [],
         "Float": [],
+        "Version": [],
         "NotMach": [],
     }
     input_stream = InputStream(input_string)
@@ -48,6 +49,9 @@ def main(input_string):
             tokens["Float"].append(token.text)
             # print("Found Float:", token.text)
         elif token.type == 6:
+            tokens["Version"].append(token.text)
+            # print("Found Version:", token.text)
+        elif token.type == 7:
             tokens["NotMach"].append(token.text)
             # print("NotMach:", token.text)
     for i, j in tokens.items():
@@ -59,7 +63,7 @@ if __name__ == "__main__":
 2027041710 
 09112583697 485.36
 some2random@mail.com 8189526871
-4589.368 here we have text
+4589.368 here we have text version 1.2.3
 548.69
 1589325697
 some randome text 

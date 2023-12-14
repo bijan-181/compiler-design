@@ -62,5 +62,14 @@ class ExtractInfoListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ExtractInfoParser#version.
+    def enterVersion(self, ctx:ExtractInfoParser.VersionContext):
+        pass
+
+    # Exit a parse tree produced by ExtractInfoParser#version.
+    def exitVersion(self, ctx:ExtractInfoParser.VersionContext):
+        pass
+
+
 
 del ExtractInfoParser

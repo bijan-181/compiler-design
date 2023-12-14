@@ -39,5 +39,10 @@ class ExtractInfoVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by ExtractInfoParser#version.
+    def visitVersion(self, ctx:ExtractInfoParser.VersionContext):
+        return self.visitChildren(ctx)
+
+
 
 del ExtractInfoParser
