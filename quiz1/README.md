@@ -37,6 +37,6 @@ input_expr = "(5-2)*2^2"
 After running the script, the result of the expression will be printed:
 
 ```bash
-Result of (5-2)*2^2 = 18.0
+Result of (5-2)*2^2 = 12.0
 ```
 
