@@ -1,0 +1,16 @@
+NUMBER=1
+PLUS=2
+MINUS=3
+MULTIPLY=4
+DIVIDE=5
+EXPONENTIATION=6
+LPAREN=7
+RPAREN=8
+WS=9
+'+'=2
+'-'=3
+'*'=4
+'/'=5
+'^'=6
+'('=7
+')'=8
